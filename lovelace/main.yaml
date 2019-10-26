@@ -1,8 +1,6 @@
 title: Быстрое управление
 icon: mdi:account-multiple
 cards:
-type: vertical-stack
-cards:
     - type: entities
       title: Кухня
       entities:

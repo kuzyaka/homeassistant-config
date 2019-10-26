@@ -85,7 +85,6 @@ binary_sensor:
         entity_id: sensor.time
 
 notify: !include notifiers.yaml
-group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 

@@ -1,7 +1,7 @@
 - alias: Kitchen switch single click
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0000f09703
       click_type: single
@@ -12,7 +12,7 @@
 - alias: Kitchen switch double click when lamp on and half brightness
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0000f09703
       click_type: double
@@ -33,7 +33,7 @@
 - alias: Kitchen switch double click when lamp on and full brightness
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0000f09703
       click_type: double
@@ -54,7 +54,7 @@
 - alias: Kitchen switch long click when lamp on
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0000f09703
       click_type: long_click_press
@@ -82,7 +82,7 @@
 - alias: Kitchen switch long click when lamp off
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0000f09703
       click_type: long_click_press

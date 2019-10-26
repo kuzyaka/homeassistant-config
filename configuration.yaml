@@ -35,6 +35,15 @@ lovelace:
 
 cloud:
 
+influxdb:
+  username: homeassistant
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+  include:
+    entities:
+      - sensor.illumination_7811dcdf0e7e
+	  
 light:
   - platform: xiaomi_miio
     name: mi_ceil62_bedroom

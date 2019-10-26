@@ -1,0 +1,33 @@
+light.mi_ceil62_bedroom:
+    friendly_name: 'Светильник спальня'
+light.mi_ceil50_kitchen:
+    friendly_name: 'Светильник кухня'
+light.mi_ceil62_lounge:
+    friendly_name: 'Светильник зал'
+light.gateway_light_7811dcdf0e7e:
+    friendly_name: 'Светильник шлюз'
+switch.broadlink_lamp_hall:
+    friendly_name: 'Свет прихожая'
+switch.plug_158d000117a7b0:
+    friendly_name: 'Розетка TV'
+binary_sensor.switch_158d0001d61fe6:
+    friendly_name: 'Кнопка прихожая'
+binary_sensor.switch_158d0000f09703:
+    friendly_name: 'Кнопка кухня'
+binary_sensor.motion_sensor_158d0001c2eeb3:
+    friendly_name: 'Датчик движения комп. стол'
+binary_sensor.motion_sensor_158d0001a98a9f:
+    friendly_name: 'Датчик движения прихожая'
+binary_sensor.switch_158d0001d8f631:
+    friendly_name: 'Кнопка спальня'
+binary_sensor.switch_158d0001d8f53d:
+    friendly_name: 'Кнопка зал'
+binary_sensor.water_leak_sensor_158d0001bc4213:
+    friendly_name: 'Датчик протечки кухня'
+binary_sensor.water_leak_sensor_158d0001bb89c9:
+    friendly_name: 'Датчик протечки туалет'
+binary_sensor.water_leak_sensor_158d0001bc41d6:
+    friendly_name: 'Датчик протечки ванная'
+binary_sensor.door_window_sensor_158d00012a236e:
+    friendly_name: 'Датчик открытия прихожая'
+

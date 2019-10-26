@@ -1,0 +1,102 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+#default_config:
+homeassistant:
+  name: Home
+  latitude: 56.845823
+  longitude: 53.235994
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 141
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Samara
+  # Customization file
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Enables support for tracking state changes over time
+history:
+
+# Tracked history is kept for 10 days
+recorder:
+  purge_keep_days: 10
+
+# View all events in a logbook
+logbook:
+
+lovelace:
+    mode: yaml
+
+cloud:
+
+light:
+  - platform: xiaomi_miio
+    name: mi_ceil62_bedroom
+    host: 192.168.1.151
+    token: 6ec6dffcddde46d01d5220d7d3e63fb2
+    model: philips.light.ceiling
+  - platform: xiaomi_miio
+    name: mi_ceil50_kitchen
+    host: 192.168.1.150
+    token: a27c5d56784358a6893b0ca7ba0ef9d5
+  - platform: xiaomi_miio
+    name: mi_ceil62_lounge
+    host: 192.168.1.152
+    token: 3f69d5581288ba2e75e9140489b8997d
+    model: philips.light.ceiling
+
+switch:
+  - platform: broadlink
+    friendly_name: broadlink_lamp_hall
+    host: 192.168.1.160
+    mac: '34:EA:34:BD:DC:7D'
+    type: sp2
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: 7811DCDF0E7E
+      key: 5bbqwvfx9u9qfepv
+      host: '192.168.1.144'
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api_key
+    allowed_chat_ids:
+      - !secret telegram_bot_allowed_chat_id1
+
+binary_sensor:
+ - platform: template
+   sensors:
+      hall_door_opening:
+        friendly_name: Hall Door Opening
+        value_template: >-
+          {{
+           (as_timestamp(sensor.time) - as_timestamp(states.binary_sensor.door_window_sensor_158d00012a236e.last_changed) < 10)
+           and is_state('switch.broadlink_lamp_hall', 'on')
+          }}
+        device_class: motion
+        entity_id: sensor.time
+
+notify: !include notifiers.yaml
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+
+shell_command:
+  lounge_light_set_half_brightness: 'miceil --ip {{ states.light.mi_ceil62_lounge.attributes.host }}  --token {{ states.light.mi_ceil62_lounge.attributes.token }} set_brightness 50'
+
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate

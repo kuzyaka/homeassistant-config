@@ -1,0 +1,22 @@
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001c2eeb3
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 20
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: light.mi_ceil62_lounge
+        state: 'on'
+      - condition: state
+        entity_id: light.mi_ceil50_kitchen
+        state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.mi_ceil62_lounge
+    - service: light.turn_off
+      entity_id: light.mi_ceil50_kitchen
+

@@ -1,0 +1,41 @@
+- alias: Hall door opening
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d00012a236e
+    from: 'off'
+    to: 'on'
+  condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: switch.broadlink_lamp_hall
+          state: 'off'
+          for:
+            minutes: 1
+        - condition: or
+          conditions:
+            - condition: sun
+              after: sunset
+              after_offset: "-01:30:00"
+            - condition: sun
+              before: sunrise
+              before_offset: "01:30:00"
+            - condition: template
+              value_template: '{{ states.sensor.illumination_7811dcdf0e7e.state < 400 }}'
+  action:
+    - delay: 0:00:01
+    - service: switch.turn_on
+      entity_id: switch.broadlink_lamp_hall
+
+- alias: Turn off hall lamp by timeout
+  trigger:
+    platform: state
+    entity_id: binary_sensor.hall_door_opening
+    from: 'off'
+    to: 'on'
+    for:
+      minutes: 1
+  action:
+    - service: switch.turn_off
+      entity_id: switch.broadlink_lamp_hall
+

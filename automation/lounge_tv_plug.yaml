@@ -1,0 +1,18 @@
+- alias: Lounge turn off tv after 21-30
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: switch.turn_off
+      entity_id: switch.plug_158d000117a7b0
+

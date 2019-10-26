@@ -1,0 +1,28 @@
+title: Быстрое управление
+icon: mdi:account-multiple
+cards:
+type: vertical-stack
+cards:
+    - type: entities
+      title: Кухня
+      entities:
+      - entity: light.mi_ceil50_kitchen
+        name: Светильник кухня
+    - type: entities
+      show_header_toggle: true
+      title: Зал
+      entities:
+      - entity: switch.plug_158d000117a7b0
+        name: Розетка TV
+      - entity: light.mi_ceil62_lounge
+        name: Светильник зал
+    - type: entities
+      title: Спальня
+      entities:
+      - entity: light.mi_ceil62_bedroom
+        name: Светильник спальня
+    - type: entities
+      title: Прихожая
+      entities:
+      - entity: switch.broadlink_lamp_hall
+        name: Свет прихожая

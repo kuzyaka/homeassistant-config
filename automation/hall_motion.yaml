@@ -1,0 +1,16 @@
+- alias: Lounge no motion turn off light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001a98a9f
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 10
+  condition:
+    - condition: state
+      entity_id: switch.broadlink_lamp_hall
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.broadlink_lamp_hall
+

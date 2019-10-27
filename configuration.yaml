@@ -14,8 +14,15 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 172.16.0.0/12
+
 # Enables the frontend
 frontend:
+
+system_health:
 
 # Enables configuration UI
 config:
@@ -43,7 +50,7 @@ influxdb:
   include:
     entities:
       - sensor.illumination_7811dcdf0e7e
-	  
+
 light:
   - platform: xiaomi_miio
     name: mi_ceil62_bedroom

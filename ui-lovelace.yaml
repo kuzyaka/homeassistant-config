@@ -1,4 +1,6 @@
 resources:
+  - url: /local/monster-card.js?v=1
+    type: js
 #  - url: /community_plugin/monster-card/monster-card.js
 #    type: js
 #  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
@@ -13,7 +15,7 @@ resources:
 title: Home Assistant - Raspberry Pi4
 views:
   - !include lovelace/main.yaml
-#  - !include lovelace/system.yaml
+  - !include lovelace/automation.yaml
 #  - !include lovelace/people.yaml
 #  - !include lovelace/lan.yaml
 #  - !include lovelace/control.yaml
@@ -21,6 +23,5 @@ views:
 #  - !include lovelace/ectlb.yaml
 #  - !include lovelace/kitchen.yaml
 #  - !include lovelace/living.yaml
-#  - !include lovelace/automation.yaml
 #  - !include lovelace/switchlight.yaml
 #  - !include lovelace/powersync.yaml

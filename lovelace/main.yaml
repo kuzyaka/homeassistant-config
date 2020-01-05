@@ -1,5 +1,5 @@
 title: Быстрое управление
-icon: mdi:account-multiple
+icon: mdi:home-assistant
 cards:
     - type: entities
       title: Кухня

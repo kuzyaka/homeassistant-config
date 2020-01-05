@@ -16,6 +16,7 @@ title: Home Assistant - Raspberry Pi4
 views:
   - !include lovelace/main.yaml
   - !include lovelace/automation.yaml
+  - !include lovelace/tracker.yaml  
 #  - !include lovelace/people.yaml
 #  - !include lovelace/lan.yaml
 #  - !include lovelace/control.yaml

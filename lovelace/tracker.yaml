@@ -1,0 +1,24 @@
+title: Tracker
+icon: mdi:account
+id: device_tracker
+cards:
+  - type: custom:monster-card
+    show_empty: false
+    card:
+      type: entities
+      title: 'Дома'
+    filter:
+      include:
+        - entity_id: "device_tracker.*"
+          state: "home"
+          friendly_name: "*трекер*"
+  - type: custom:monster-card
+    show_empty: false
+    card:
+      type: entities
+      title: 'Не дома'
+    filter:
+      include:
+        - entity_id: "device_tracker.*"
+          state: "not_home"
+          friendly_name: "*трекер*"

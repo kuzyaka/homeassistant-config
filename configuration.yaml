@@ -116,3 +116,13 @@ shell_command:
 # Text to speech
 tts:
   - platform: google_translate
+
+device_tracker:
+  - platform: padavan_tracker
+    consider_home: 10
+    interval_seconds: 3
+    url: http://192.168.1.1/ # web interface url (don't forget about `/` in the end)
+    username: !secret webadmin_login # Web interface user name
+    password: !secret webadmin_password # Web interface user pass
+    new_device_defaults:
+      track_new_devices: false

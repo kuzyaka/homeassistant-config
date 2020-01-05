@@ -30,4 +30,8 @@ binary_sensor.water_leak_sensor_158d0001bc41d6:
     friendly_name: 'Датчик протечки ванная'
 binary_sensor.door_window_sensor_158d00012a236e:
     friendly_name: 'Датчик открытия прихожая'
-
+device_tracker.dc_16_b2_ff_92_3a:
+    friendly_name: 'Алёна трекер'
+device_tracker.30_a1_fa_11_90_1e:
+    frinedly_name: 'Антон трекер'
+    

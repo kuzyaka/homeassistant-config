@@ -2,3 +2,27 @@
     platform: telegram
     api_key: !secret telegram_bot_api_key
     chat_id: !secret telegram_bot_allowed_chat_id1
+  - name: yandex
+    platform: smtp
+    server: smtp.yandex.ru
+    port: 465
+    timeout: 15
+    sender: !secret yandex_sender
+    encryption: tls
+    username: !secret yandex_login
+    password: !secret yandex_password
+    recipient:
+      - !secret yandex_sender
+    sender_name: My Home Assistant
+  - name: gmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret gmail_sender
+    encryption: starttls
+    username: !secret gmail_login
+    password: !secret gmail_password
+    recipient:
+      - !secret gmail_sender
+    sender_name: My Home Assistant    

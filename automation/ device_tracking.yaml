@@ -1,0 +1,26 @@
+- alias: Приход
+  trigger:
+    platform: state
+    entity_id:
+        - device_tracker.2c_57_31_cc_25_6a
+        - device_tracker.30_a1_fa_11_90_1e
+        - device_tracker.dc_16_b2_ff_92_3a
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.telegram_alarm_bot
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} пришел домой'
+- alias: Уход
+  trigger:
+    platform: state
+    entity_id:
+        - device_tracker.2c_57_31_cc_25_6a
+        - device_tracker.30_a1_fa_11_90_1e
+        - device_tracker.dc_16_b2_ff_92_3a
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: notify.telegram_alarm_bot
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} ушел из дома'

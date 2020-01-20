@@ -1,0 +1,20 @@
+- alias: Telegram is down
+  trigger:
+    platform: state
+    entity_id: sensor.telegram_status
+    from: 'online'
+    to: 'offline'
+  action:
+    service: notify.yandex
+    data:
+      message: 'Telegram API is down!'
+- alias: Telegram is down
+  trigger:
+    platform: state
+    entity_id: sensor.telegram_status
+    from: 'offline'
+    to: 'online'
+  action:
+    service: notify.yandex
+    data:
+      message: 'Telegram API is up!'

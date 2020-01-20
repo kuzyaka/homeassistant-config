@@ -88,6 +88,11 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_bot_allowed_chat_id1
 
+sensor:
+  - platform: command_line
+    name: "Telegram Status"
+    command: sh /config/scripts/telegram_health.sh
+
 binary_sensor:
  - platform: template
    sensors:
@@ -126,3 +131,10 @@ device_tracker:
     password: !secret webadmin_password # Web interface user pass
     new_device_defaults:
       track_new_devices: false
+group:
+  phone_trackers:
+    name: Phone trackers
+    entities:
+      - device_tracker.dc_16_b2_ff_92_3a
+      - device_tracker.30_a1_fa_11_90_1e
+      - device_tracker.2c_57_31_cc_25_6a

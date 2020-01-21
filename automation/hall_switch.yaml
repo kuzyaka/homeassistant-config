@@ -8,4 +8,19 @@
   action:
     - service: switch.toggle
       entity_id: switch.broadlink_lamp_hall
-
+- alias: Hall switch double click turn off all lights
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d61fe6
+      click_type: double
+  action:
+    - service: switch.turn_off
+      entity_id: switch.broadlink_lamp_hall
+    - service: light.turn_off
+      entity_id: 
+        - switch.broadlink_lamp_hall
+        - light.mi_ceil50_kitchen
+        - light.mi_ceil62_bedroom
+        - light.mi_ceil62_lounge

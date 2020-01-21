@@ -19,7 +19,7 @@
               after_offset: "-01:30:00"
             - condition: sun
               before: sunrise
-              before_offset: "01:30:00"
+              before_offset: "00:30:00"
 #            - condition: template
 #              value_template: "{{ states('sensor.illumination_7811dcdf0e7e') < 400 }}"
   action:

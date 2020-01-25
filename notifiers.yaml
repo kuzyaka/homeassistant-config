@@ -1,7 +1,11 @@
   - name: telegram_alarm_bot
     platform: telegram
     api_key: !secret telegram_bot_api_key
-    chat_id: !secret telegram_bot_allowed_chat_id1
+    chat_id: !secret telegram_bot_allowed_chat_important
+  - name: telegram_log_bot
+    platform: telegram
+    api_key: !secret telegram_bot_api_key
+    chat_id: !secret telegram_bot_allowed_chat_log
   - name: yandex
     platform: smtp
     server: smtp.yandex.ru

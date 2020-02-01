@@ -23,7 +23,7 @@
         entity_id: light.mi_ceil62_lounge
         state: 'on'
       - condition: template
-        value_template: '{{ states.light.mi_ceil62_lounge.attributes.brightness <= 132 }}'
+        value_template: '{{ states.light.mi_ceil62_lounge.attributes.brightness < 255 }}'
   action:
     - service: light.turn_on
       data:
@@ -44,7 +44,7 @@
         entity_id: light.mi_ceil62_lounge
         state: 'on'
       - condition: template
-        value_template: '{{ states.light.mi_ceil62_lounge.attributes.brightness >= 250 }}'
+        value_template: '{{ states.light.mi_ceil62_lounge.attributes.brightness >= 255 }}'
   action:
     - service: light.turn_on
       data:

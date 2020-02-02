@@ -38,3 +38,25 @@ device_tracker.2c_57_31_cc_25_6a:
     frinedly_name: 'Нина А. трекер'
 device_tracker.f4_f5_db_1e_c5_b0:
     frinedly_name: 'Вова А. трекер'
+binary_sensor.0x00158d0001bb89c9_water_leak:
+    friendly_name: 'Датчик протечки туалет MQTT'
+binary_sensor.0x00158d0001bc41d6_water_leak:
+    friendly_name: 'Датчик протечки ванная MQTT'
+binary_sensor.0x00158d0001bc4213_water_leak:
+    friendly_name: 'Датчик протечки кухня MQTT'
+sensor.0x00158d0001d8f53d_click:
+    friendly_name: 'Кнопка зал MQTT'
+sensor.0x00158d0000f09703_click:
+    friendly_name: 'Кнопка кухня MQTT'
+sensor.0x00158d0001d8f631_click:
+    friendly_name: 'Кнопка спальня MQTT'
+sensor.0x00158d0001d61fe6_click:
+    friendly_name: 'Кнопка прихожая MQTT'
+switch.0x00158d000117a7b0_switch:
+    friendly_name: 'Розетка TV MQTT'
+binary_sensor.0x00158d00012a236e_contact:
+    friendly_name: 'Датчик открытия прихожая MQTT'
+binary_sensor.0x00158d0001a98a9f_occupancy:
+    friendly_name: 'Датчик движения прихожая MQTT'
+binary_sensor.0x00158d0001c2eeb3_occupancy:
+    friendly_name: 'Датчик движения комп. стол MQTT'

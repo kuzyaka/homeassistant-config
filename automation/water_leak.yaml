@@ -1,10 +1,13 @@
 - alias: Water leak kitchen
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001bc4213
+    entity_id: binary_sensor.0x00158d0001bc4213_water_leak
     from: 'off'
     to: 'on'
   action:
+    - service: notify.yandex
+      data:
+        message: 'Протечка на кухне !!!'
     - service: notify.telegram_alarm_bot
       data:
         message: 'Протечка на кухне !!!'
@@ -12,10 +15,13 @@
 - alias: Water leak toilet
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001bb89c9
+    entity_id: binary_sensor.0x00158d0001bb89c9_water_leak
     from: 'off'
     to: 'on'
   action:
+    - service: notify.yandex
+      data:
+        message: 'Протечка в туалете !!!'
     - service: notify.telegram_alarm_bot
       data:
         message: 'Протечка в туалете !!!'
@@ -23,10 +29,13 @@
 - alias: Water leak bathroom
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001bc41d6
+    entity_id: binary_sensor.0x00158d0001bc41d6_water_leak
     from: 'off'
     to: 'on'
   action:
+    - service: notify.yandex
+      data:
+        message: 'Протечка в ванной !!!'
     - service: notify.telegram_alarm_bot
       data:
         message: 'Протечка в ванной !!!'

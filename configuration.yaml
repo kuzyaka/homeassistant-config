@@ -76,24 +76,12 @@ switch:
     mac: '34:EA:34:BD:DC:7D'
     type: sp2
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - mac: 7811DCDF0E7E
-      key: 5bbqwvfx9u9qfepv
-      host: '192.168.1.144'
-
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_bot_api_key
     allowed_chat_ids:
       - !secret telegram_bot_allowed_chat_important
       - !secret telegram_bot_allowed_chat_log
-
-sensor:
-  - platform: command_line
-    name: "Telegram Status"
-    command: sh /config/scripts/telegram_health.sh
 
 binary_sensor:
  - platform: template
@@ -120,10 +108,6 @@ shell_command:
 # http:
 #   base_url: example.duckdns.org:8123
 
-# Text to speech
-tts:
-  - platform: google_translate
-
 device_tracker:
   - platform: padavan_tracker
     consider_home: 10
@@ -140,3 +124,47 @@ group:
       - device_tracker.dc_16_b2_ff_92_3a
       - device_tracker.30_a1_fa_11_90_1e
       - device_tracker.2c_57_31_cc_25_6a
+
+#Zigbee2MQTT
+mqtt:
+  broker: core-mosquitto
+  discovery: true
+
+input_boolean:
+  zigbee_permit_join:
+    name: Allow devices to join
+    initial: off
+    icon: mdi:cellphone-wireless
+
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 600 
+
+sensor:
+  - platform: command_line
+    name: "Telegram Status"
+    command: sh /config/scripts/telegram_health.sh
+  - platform: mqtt
+    name: Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
+
+input_select:
+  zigbee2mqtt_log_level:
+    name: Zigbee2mqtt Log Level
+    options:
+      - debug
+      - info
+      - warn
+      - error
+    initial: info
+    icon: mdi:format-list-bulleted
+
+input_text:
+  zigbee2mqtt_old_name:
+    name: Zigbee2mqtt Old Name
+  zigbee2mqtt_new_name:
+    name: Zigbee2mqtt New Name
+  zigbee2mqtt_remove:
+    name: Zigbee2mqtt Remove

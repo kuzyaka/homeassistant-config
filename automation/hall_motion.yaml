@@ -1,7 +1,7 @@
 - alias: Lounge no motion turn off light
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001a98a9f
+    entity_id: binary_sensor.0x00158d0001a98a9f_occupancy
     from: 'on'
     to: 'off'
     for:

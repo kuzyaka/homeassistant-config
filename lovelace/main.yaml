@@ -10,7 +10,7 @@ cards:
       show_header_toggle: true
       title: Зал
       entities:
-      - entity: switch.plug_158d000117a7b0
+      - entity: switch.0x00158d000117a7b0_switch
         name: Розетка TV
       - entity: light.mi_ceil62_lounge
         name: Светильник зал

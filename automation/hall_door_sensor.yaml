@@ -2,7 +2,7 @@
   initial_state: false
   trigger:
     platform: state
-    entity_id: binary_sensor.door_window_sensor_158d00012a236e
+    entity_id: binary_sensor.0x00158d00012a236e_contact
     from: 'off'
     to: 'on'
   condition:
@@ -21,8 +21,6 @@
             - condition: sun
               before: sunrise
               before_offset: "00:30:00"
-#            - condition: template
-#              value_template: "{{ states('sensor.illumination_7811dcdf0e7e') < 400 }}"
   action:
     - delay: 0:00:01
     - service: switch.turn_on

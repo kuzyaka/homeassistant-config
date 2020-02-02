@@ -1,22 +1,18 @@
 
 - alias: Bedroom switch single click
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001d8f631
-      click_type: single
+    platform: state
+    entity_id: sensor.0x00158d0001d8f631_click
+    to: 'single'
   action:
     - service: light.toggle
       entity_id: light.mi_ceil62_bedroom
 
 - alias: Bedroom switch double click when lamp on and half brightness
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001d8f631
-      click_type: double
+    platform: state
+    entity_id: sensor.0x00158d0001d8f631_click
+    to: 'double'
   condition:
     condition: and
     conditions:
@@ -33,11 +29,9 @@
 
 - alias: Bedroom switch double click when lamp on and full brightness
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001d8f631
-      click_type: double
+    platform: state
+    entity_id: sensor.0x00158d0001d8f631_click
+    to: 'double'
   condition:
     condition: and
     conditions:

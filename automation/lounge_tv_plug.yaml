@@ -14,5 +14,5 @@
       - sun
   action:
     - service: switch.turn_off
-      entity_id: switch.plug_158d000117a7b0
+      entity_id: switch.0x00158d000117a7b0_switch
 

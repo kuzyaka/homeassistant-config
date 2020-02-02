@@ -1,28 +1,10 @@
 resources:
   - url: /local/monster-card.js?v=1
     type: js
-#  - url: /community_plugin/monster-card/monster-card.js
-#    type: js
-#  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
-#    type: js 
-#  - url: /community_plugin/canvas-gauge-card/canvas-gauge-card.js
-#    type: module 
-#  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
-#    type: module
-#  - url: /local/battery-entity.js?v=0.1
-#type: module
     
 title: Home Assistant - Raspberry Pi4
 views:
   - !include lovelace/main.yaml
   - !include lovelace/automation.yaml
-  - !include lovelace/tracker.yaml  
-#  - !include lovelace/people.yaml
-#  - !include lovelace/lan.yaml
-#  - !include lovelace/control.yaml
-#  - !include lovelace/power.yaml
-#  - !include lovelace/ectlb.yaml
-#  - !include lovelace/kitchen.yaml
-#  - !include lovelace/living.yaml
-#  - !include lovelace/switchlight.yaml
-#  - !include lovelace/powersync.yaml
+  - !include lovelace/tracker.yaml
+  - !include lovelace/zigbee2mqtt.yaml
